@@ -12,7 +12,7 @@
 # # The Processing is taking that array and reshaping it into a 3x3 dataframe.
 # # Then that original array is stored and can be mainpulated with other menu
 # # options. When hitting 2-4 the array is mainpulated according to what is
-# # corrisponding to. Menu 2 will square the array elements, menu 3 will add 4
+# # corrisponding to. Menu 2 will cubed the array elements, menu 3 will add 7
 # # to every element and menu 4 will multiply 6 to every element.
 # # The output is the display of the first array from the creation, and the
 # # other displays is showing the mainpulated array by the menu choices.
@@ -76,13 +76,7 @@ def main():
             
 def createArray():
     """This Function creates the array that is to be manipulated"""
-    arrayList = []
-    for x in range (3):
-        for i in range(3):
-            userInput = int(input("Enter a Integer: "))
-            arrayList.append(userInput)
-    creationArry = np.array(arrayList)
-    newCreation = creationArry.reshape(3, 3)
+    arrayCreation = np.arrange(2,20,2).reshape(3, 3)
     return newCreation
 
 
@@ -103,11 +97,11 @@ def cubedArray(arr):
     cubed = arr**3
     return cubed
 
-def displayArrayCubed(squared):
+def displayArrayCubed(cubed):
     """Displaying the Array that is to be mainpulated by cubing"""
     print()
     print()
-    for x in (squared):
+    for x in (cubed):
         for elem in x:
             print("{}".format(elem).rjust(3), end=" ")
         print(end="\n")
